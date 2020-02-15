@@ -1,3 +1,13 @@
+Boot
+Ouvrir Atom
+Ouvrir Xampp
+Split la fenêtre entre udemy et Atom
+Ouvir cmd
+
+Commandes Git
+git checkout -b [nom_de_la_branche]
+
+
 Login infos
 kasandra34@example.com
 secret
