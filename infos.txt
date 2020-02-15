@@ -6,7 +6,15 @@ Ouvir cmd
 
 Commandes Git
 git checkout -b [nom_de_la_branche]
+git add .
+git commit -m "[Message du commit]"
+git push origin [nom_de_la_branche]
+git checkout master
+git merge [nom_de_la_branche]
+git push origin master
 
+En cas de bug (par exemple si on crée des nouveaux dossiers dans la branche et que ça bloque le merge)
+refaire un coup de git add . une fois dans master
 
 Login infos
 kasandra34@example.com
