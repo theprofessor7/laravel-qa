@@ -12,7 +12,7 @@
                             <div class="ml-auto">
                                 <a href="{{ route('questions.index') }}" class="btn btn-outline-secondary">Back to all Questions</a>
                             </div>
-                        </div>
+                        </div>                        
                     </div>
 
                     <hr>
@@ -50,10 +50,10 @@
             </div>
         </div>
     </div>
-    @include('answers._index', [
-      'answers' => $question->answers,
-      'answersCount' => $question->answers_count,
+    @include ('answers._index', [
+        'answers' => $question->answers,
+        'answersCount' => $question->answers_count,
     ])
-    @include('answers._create')
+    @include ('answers._create')
 </div>
 @endsection

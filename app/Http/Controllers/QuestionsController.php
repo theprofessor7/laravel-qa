@@ -9,7 +9,7 @@ use App\Http\Requests\AskQuestionRequest;
 class QuestionsController extends Controller
 {
     public function __construct() {
-      $this->middleware('auth', ['except' => ['index', 'show']]);
+        $this->middleware('auth', ['except' => ['index', 'show']]);
     }
 
     /**
@@ -18,10 +18,10 @@ class QuestionsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {        
         $questions = Question::with('user')->latest()->paginate(10);
 
-        return view('questions.index', compact('questions'));
+        return view('questions.index', compact('questions'));        
     }
 
     /**
@@ -45,6 +45,7 @@ class QuestionsController extends Controller
     public function store(AskQuestionRequest $request)
     {
         $request->user()->questions()->create($request->only('title', 'body'));
+
         return redirect()->route('questions.index')->with('success', "Your question has been submitted");
     }
 
@@ -70,7 +71,7 @@ class QuestionsController extends Controller
     public function edit(Question $question)
     {
         $this->authorize("update", $question);
-        return view("questions.edit", compact("question"));
+        return view("questions.edit", compact('question'));
     }
 
     /**
@@ -86,7 +87,7 @@ class QuestionsController extends Controller
 
         $question->update($request->only('title', 'body'));
 
-        return redirect('/questions')->with('success', "Your question has been updated");
+        return redirect('/questions')->with('success', "Your question has been updated.");
     }
 
     /**
@@ -101,6 +102,6 @@ class QuestionsController extends Controller
 
         $question->delete();
 
-        return redirect('/questions')->with('success', "Your question has been deleted");
+        return redirect('/questions')->with('success', "Your question has been deleted.");
     }
 }
